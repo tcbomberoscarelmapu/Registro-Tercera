@@ -1,0 +1,27 @@
+REGISTRO DE BOMBEROS CARELMAPU — ARCHIVOS SEPARADOS
+
+ARCHIVOS DEL PROYECTO APPS SCRIPT
+- Code.gs: backend, autenticación, permisos, auditoría y conexión con Google Sheets/Drive.
+- Index.html: estructura HTML principal y plantilla que incluye los otros archivos.
+- CSS.html: estilos visuales y adaptación móvil.
+- JavaScript.html: lógica del navegador e interacción con google.script.run y la función api() de Code.gs.
+
+IMPORTANTE: se mantienen los nombres exactos de los archivos. Apps Script no sirve estos archivos como una web estática independiente: deben estar dentro del mismo proyecto de Google Apps Script. La conexión con la hoja de cálculo se mantiene mediante la API existente.
+
+INSTALACIÓN / ACTUALIZACIÓN
+1. Abre el proyecto de Google Apps Script vinculado a la hoja de cálculo existente.
+2. Conserva una copia de seguridad de los archivos actuales.
+3. Reemplaza Code.gs por el incluido en este paquete.
+4. Crea o reemplaza los archivos HTML llamados exactamente Index, CSS y JavaScript (en Apps Script, todos se crean desde + > HTML; la interfaz les muestra extensión .html). Pega el contenido del archivo correspondiente.
+5. No cambies los nombres de las hojas ni sus encabezados. No ejecutes setup() sobre una hoja que ya esté en uso sin revisar antes su estructura.
+6. Guarda y prueba desde Implementar > Probar implementaciones. Después ve a Implementar > Administrar implementaciones, edita la implementación web existente y crea una nueva versión.
+7. Abre la URL de la aplicación y comprueba acceso, lectura, creación y edición con una cuenta autorizada.
+
+DATOS Y SEGURIDAD
+- El backend sigue leyendo/escribiendo en la hoja de cálculo activa del proyecto y usa Drive para fotografías, según la implementación original.
+- Mantén la implementación restringida a los usuarios autorizados por la institución.
+- La credencial inicial admin / Cambiar123! solo corresponde a la configuración inicial del backend; si el sistema ya estaba instalado, conserva las cuentas existentes y no restablezcas usuarios sin necesidad.
+- No publiques ni compartas el contenido de Code.gs/JavaScript.html con personas no autorizadas si incluye detalles internos del sistema.
+
+NOTA
+Los archivos se separaron preservando la lógica existente. No se puede confirmar conexión real a la hoja sin probarlos dentro del proyecto de Apps Script con sus permisos y hoja vinculada.
